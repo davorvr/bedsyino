@@ -2,7 +2,7 @@
 
 #### What is it?
 
-The **BeDSy (Behaviour-recording Device Synchroniser)** is a platform for hardware triggering and synchronisation of equipment for laboratory animal behavioural monitoring. For more information about the BeDSy platform, check the **[BeDSy repository](https://github.com/davorvr/bedsy)**.
+The **[BeDSy (Behaviour-recording Device Synchroniser)](https://github.com/davorvr/bedsy)** is a platform for hardware triggering and synchronisation of equipment for laboratory animal behavioural monitoring. For more information about the BeDSy platform, check the **[BeDSy repository](https://github.com/davorvr/bedsy)**.
 
 The platform consists of two components: the **[BeDsy Python package](https://github.com/davorvr/bedsy)**, which interfaces with the **BeDSyino**, a hardware platform which sends custom trigger signals to animal behaviour-monitoring devices.
 
