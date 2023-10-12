@@ -10,7 +10,7 @@ The BeDSyino is based on the [Teensy 4.0](https://www.pjrc.com/store/teensy40.ht
 
 #### Current state
 
-The [BeDsyino](https://github.com/davorvr/bedsyino) is still cooking. While the code is mostly complete, only a single hand-soldered, protoboard-based prototype has been developed thus far. A modular, extensible hardware platform is currently in the works and hardware files will be uploaded as soon as it's ready. The `.ino` file contains a lot of (hopefully) helpful comments, but more work on the documentation is necessary.
+The [BeDSyino](https://github.com/davorvr/bedsyino) is still cooking. While the code is mostly complete, only a single hand-soldered, protoboard-based prototype has been developed thus far. A modular, extensible hardware platform is currently in the works and hardware files will be uploaded as soon as it's ready. The `.ino` file contains a lot of (hopefully) helpful comments, but more work on the documentation is necessary.
 
 *TO DO - expand*
 
