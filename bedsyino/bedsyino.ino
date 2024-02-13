@@ -1,4 +1,6 @@
-/* This code intends to provide a flexible triggering device for synchronising multiple devices
+/* TODO: Update this block comment for Bedsyino v1.0 (this refers to the prototype)
+ * 
+ * This code intends to provide a flexible triggering device for synchronising multiple devices
  * that need to operate concurrently. Currently, it outputs two different kinds of signals:
  *      - square wave to trigger many Basler cameras (1 pulse = 1 frame)
  *      - active-low signal for the DIN input of a single AviSoft UltraSound Gate
@@ -22,12 +24,13 @@
  * The device accepts "s" to start and "x" to stop via USB serial. It also automatically stops
  * for a user-defined period of time, and restarts, to enable rollover of logs into a new file.
  * When any of these events happens, a message is send with a machine-scannable code in square brackets.
- *
+ * 
+ * /TODO
  */
 #define PIN_USG_OUT 6
 #define PIN_BASLER_OUT 9
-#define PIN_ENABLE_1 7
-#define PIN_ENABLE_2 8
+#define PIN_ENABLE_1 35
+#define PIN_ENABLE_2 34
 
 /* USER CONFIG */
 // in milliseconds
@@ -75,12 +78,21 @@ void report_state(unsigned long timer, unsigned long timeout) {
   }
 }
 
+void outputs_enable() {
+  digitalWrite(PIN_ENABLE_1, LOW);
+  digitalWrite(PIN_ENABLE_2, HIGH);
+}
+
+void outputs_disable() {
+  digitalWrite(PIN_ENABLE_1, HIGH);
+  digitalWrite(PIN_ENABLE_2, LOW);
+}
+
 void setup() {
-  // initialize ENABLE pins and use them to disable the 244's output
+  // initialize ENABLE pins and use them to disable the 241's output
   pinMode(PIN_ENABLE_1, OUTPUT);
   pinMode(PIN_ENABLE_2, OUTPUT);
-  digitalWrite(PIN_ENABLE_1, HIGH);
-  digitalWrite(PIN_ENABLE_2, HIGH);
+  outputs_disable();
 
   /* set up the PWM internal peripheral */
   // 12 bits resolution - PWM values from 0 (always off) to
@@ -94,9 +106,8 @@ void setup() {
   // initialize the LED pin on the Teensy board
   pinMode(LED_BUILTIN, OUTPUT);
 
-  // enable the 244's output now that everything is set up
-  digitalWrite(PIN_ENABLE_1, LOW);
-  digitalWrite(PIN_ENABLE_2, LOW);
+  // enable the 241's output now that everything is set up
+  outputs_enable();
 
   // start with signals on or off based on the initial setting of the "running" flag
   if (running) signals_on();
