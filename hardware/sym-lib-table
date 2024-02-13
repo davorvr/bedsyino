@@ -1,0 +1,6 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "Teensy 4.1")(type "KiCad")(uri "${KIPRJMOD}/lib/teensy/symbol/teensy.kicad_sym")(options "")(descr ""))
+  (lib (name "TC44217A")(type "KiCad")(uri "${KIPRJMOD}/lib/tc4427a/2024-01-09_13-16-22.kicad_sym")(options "")(descr ""))
+  (lib (name "Library")(type "KiCad")(uri "${KIPRJMOD}/lib/Library.kicad_sym")(options "")(descr ""))
+)
